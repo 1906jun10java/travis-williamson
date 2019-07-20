@@ -30,6 +30,9 @@ public class CredentialsDAOImpl implements CredentialsDAO {
 		}
 		
 		return databaseCredentials;
+		
+		// if username or password is not in database, it returns a single null value
+
 	}
 	
 	public void logout() throws SQLException {

@@ -16,20 +16,10 @@ public class Credentials {
 	
 	// Instance Variables
 
-	private int credentialsID;
 	private String username;
 	private String password;
-	private int userID;
 	
 	// Getters & Setters
-	
-	public int getCredentialsID() {
-		return credentialsID;
-	}
-
-	public void setCredentialsID(int credentialsID) {
-		this.credentialsID = credentialsID;
-	}
 
 	public String getUsername() {
 		return username;
@@ -46,30 +36,19 @@ public class Credentials {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
-	public int getUserID() {
-		return userID;
-	}
-
-	public void setUserID(int userID) {
-		this.userID = userID;
-	}
 		
 	// Methods
 	
 	@Override
 	public String toString() {
-		return "Credentials [credentialsID=" + credentialsID + ", username=" + username + ", password=" + password
-				+ ", userID=" + userID + "]";
+		return "Credentials [username=" + username + ", password=" + password + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + credentialsID;
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
-		result = prime * result + userID;
 		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		return result;
 	}
@@ -83,14 +62,10 @@ public class Credentials {
 		if (getClass() != obj.getClass())
 			return false;
 		Credentials other = (Credentials) obj;
-		if (credentialsID != other.credentialsID)
-			return false;
 		if (password == null) {
 			if (other.password != null)
 				return false;
 		} else if (!password.equals(other.password))
-			return false;
-		if (userID != other.userID)
 			return false;
 		if (username == null) {
 			if (other.username != null)
@@ -99,7 +74,5 @@ public class Credentials {
 			return false;
 		return true;
 	}
-	
-	
 	
 }

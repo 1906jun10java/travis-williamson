@@ -26,6 +26,10 @@ public class Driver {
 		
 		// Attempt to retrieve username and password from credentials table
 		
+		// Works - if username or password is not in database, it returns a
+		// single null value
+		
+		/*
 		CredentialsDAOImpl credDAOImpl = new CredentialsDAOImpl();
 		
 		try {
@@ -33,6 +37,7 @@ public class Driver {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		*/
 		
 	}
 }
