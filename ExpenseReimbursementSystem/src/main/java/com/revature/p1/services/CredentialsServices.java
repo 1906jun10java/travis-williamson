@@ -8,10 +8,17 @@ public class CredentialsServices {
 	
 	// Instance Variables
 	
+	CredentialsDAOImpl credDAOImpl = new CredentialsDAOImpl();
+	
 	// Methods
+	
+	public static void authenticateUser() {
+		//
+	}
 	
 	public static void login() {
 		//
+		
 	}
 	
 	public static void logout() {

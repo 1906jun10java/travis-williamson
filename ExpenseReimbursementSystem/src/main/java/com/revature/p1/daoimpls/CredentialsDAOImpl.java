@@ -22,11 +22,14 @@ public class CredentialsDAOImpl implements CredentialsDAO {
 		boolean result = false;
 		Connection conn = cf.getConnection();
 		Statement stmt = conn.createStatement();
-		ResultSet rs = stmt.executeQuery("SELECT * FROM P1_CREDENTIALS WHERE USERNAME = "+"'"+username+"' AND USER_PASSWORD = "+"'"+password+"'" );
+		//ResultSet rs = stmt.executeQuery("SELECT * FROM P1_CREDENTIALS WHERE USERNAME = "+"'"+username+"' AND USER_PASSWORD = "+"'"+password+"'" );
+		ResultSet rs = stmt.executeQuery("SELECT P1_CREDENTIALS.USERNAME, USER_PASSWORD, USER_TYPE "
+				+ "FROM P1_USER JOIN P1_CREDENTIALS ON P1_USER.USERNAME = P1_CREDENTIALS.USERNAME "
+				+ "WHERE P1_CREDENTIALS.USERNAME = "+"'"+username+"' AND P1_CREDENTIALS.USER_PASSWORD = "+"'"+password+"'" );
 		Credentials databaseCredentials = null;
 		
 		while(rs.next()) {
-			databaseCredentials = new Credentials (rs.getString(1), rs.getString(2));
+			databaseCredentials = new Credentials (rs.getString(1), rs.getString(2), rs.getInt(3));
 		}
 		
 		return databaseCredentials;
