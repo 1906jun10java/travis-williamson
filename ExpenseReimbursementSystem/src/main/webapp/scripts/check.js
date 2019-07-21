@@ -17,10 +17,19 @@ function populateUser() {
 		} else {
 			//define behavior for when a user is returned
 			user = data;
+			document.getElementById("userid").innerText = "userid: "+user.userID;
+			document.getElementById("usertype").innerText = "usertype: "+user.userType;
+			document.getElementById("firstname").innerText = "firstname: "+user.firstName;
+			document.getElementById("lastname").innerText = "lastname: "+user.lastName;
 			document.getElementById("username").innerText = "username: "+user.username;
-			document.getElementById("firstname").innerText = "firstname: "+user.firstname;
-			document.getElementById("lastname").innerText = "lastname: "+user.lastname;
-			document.getElementById("email").innerText = "email: "+user.email;
+			document.getElementById("addressline1").innerText = "addressline1: "+user.addressLine1;
+			document.getElementById("addressline2").innerText = "addressline2: "+user.addressLine2;
+			document.getElementById("city").innerText = "city: "+user.city;
+			document.getElementById("state").innerText = "state: "+user.state;
+			document.getElementById("zipcode").innerText = "zipcode: "+user.zipCode;
+			document.getElementById("email").innerText = "email: "+user.emailAddress;
+			document.getElementById("phone").innerText = "phone: "+user.phoneNumber;
+			document.getElementById("managerid").innerText = "managerid: "+user.managerID;
 		}
 	})
 }

@@ -6,28 +6,27 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import javax.servlet.http.HttpSession;
 
 import com.revature.p1.services.CredentialsServices;
 import com.revature.p1.beans.*;
 
-public class LogoutServlet extends HttpServlet {
-	
-    public LogoutServlet() {
+public class EmployeeHomeServlet extends HttpServlet {
+   
+	//private static final long serialVersionUID = 1L;
+
+	public EmployeeHomeServlet() {
         super();
     }
 
+    @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		HttpSession session = request.getSession(false);
-		
-		if (session != null) {
-			session.invalidate();
-		}
-		
-		response.sendRedirect("login");
+    	request.getRequestDispatcher("employeehome.html").forward(request , response);;
 	}
 
+    @Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		doGet(request, response);
