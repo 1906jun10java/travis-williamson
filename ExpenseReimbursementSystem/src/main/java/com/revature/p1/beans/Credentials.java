@@ -8,6 +8,12 @@ public class Credentials {
 		super();
 	}
 	
+	public Credentials(String username, String password) {
+		super();
+		this.username = username;
+		this.password = password;
+	}
+	
 	public Credentials(String username, String password, int userType) {
 		super();
 		this.username = username;

@@ -1,5 +1,7 @@
 package com.revature.p1.daoimpls;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -20,7 +22,14 @@ public class CredentialsDAOImpl implements CredentialsDAO {
 	public Credentials login(String username, String password) throws SQLException {
 		
 		boolean result = false;
-		Connection conn = cf.getConnection();
+		Connection conn = null;
+		try {
+			conn = cf.getConnection("database.properties");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		Statement stmt = conn.createStatement();
 		//ResultSet rs = stmt.executeQuery("SELECT * FROM P1_CREDENTIALS WHERE USERNAME = "+"'"+username+"' AND USER_PASSWORD = "+"'"+password+"'" );
 		ResultSet rs = stmt.executeQuery("SELECT P1_CREDENTIALS.USERNAME, USER_PASSWORD, USER_TYPE "

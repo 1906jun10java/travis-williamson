@@ -1,5 +1,7 @@
 package com.revature.p1.daoimpls;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -25,7 +27,14 @@ public class UserDAOImpl implements UserDAO {
 			String addressLine1, String addressLine2, String city, String state, String zipCode, String emailAddress,
 			String phoneNumber, int managerID) throws SQLException {
 		
-		Connection conn = cf.getConnection();
+		Connection conn = null;
+		try {
+			conn = cf.getConnection("database.properties");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		String sql = "INSERT INTO P1_USER VALUES(SQ_USER_PK.NEXTVAL,?,?,?,?,?,?,?,?,?,?,?,?)";
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ps.setInt(1, userType);
@@ -41,5 +50,27 @@ public class UserDAOImpl implements UserDAO {
 		ps.setString(11, phoneNumber);
 		ps.setInt(12, managerID);
 		ps.executeUpdate();
+	}
+	
+	public User getUser(String username) throws SQLException {
+		Connection conn = null;
+		try {
+			conn = cf.getConnection("database.properties");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		Statement stmt = conn.createStatement();
+		ResultSet rs = stmt.executeQuery("SELECT * FROM P1_USER WHERE USERNAME = "+"'"+username+"'" );
+		User u = null;
+		
+		while(rs.next()) {
+			u = new User (rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6),
+					rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10), rs.getString(11),
+					rs.getString(12), rs.getInt(13));
+		}
+		
+		return u;
 	}
 }

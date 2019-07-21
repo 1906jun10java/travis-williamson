@@ -10,6 +10,11 @@ public class User {
 		super();
 	}
 	
+	public User(String username, int userType) {
+		this.username = username;
+		this.userType = userType;
+	}
+	
 	public User(int userType, String firstName, String lastName, String username,
 			String addressLine1, String addressLine2, String city, String state, String zipCode, String emailAddress,
 			String phoneNumber, int managerID) {
@@ -27,6 +32,25 @@ public class User {
 		this.phoneNumber = phoneNumber;
 		this.managerID = managerID;
 	}
+	
+	public User(int userID, int userType, String firstName, String lastName, String username,
+			String addressLine1, String addressLine2, String city, String state, String zipCode, String emailAddress,
+			String phoneNumber, int managerID) {
+		super();
+		this.userID = userID;
+		this.userType = userType;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.username = username;
+		this.addressLine1 = addressLine1;
+		this.addressLine2 = addressLine2;
+		this.city = city;
+		this.state = state;
+		this.zipCode = zipCode;
+		this.emailAddress = emailAddress;
+		this.phoneNumber = phoneNumber;
+		this.managerID = managerID;
+	}
 
 	// Instance Variables
 	
@@ -35,7 +59,7 @@ public class User {
 	private String firstName;
 	private String lastName;
 	private String username;
-	private LocalDate birthdate;
+	//private LocalDate birthdate;
 	private String addressLine1;
 	private String addressLine2;
 	private String city;
@@ -86,7 +110,7 @@ public class User {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-
+	/*
 	public LocalDate getBirthdate() {
 		return birthdate;
 	}
@@ -94,7 +118,7 @@ public class User {
 	public void setBirthdate(LocalDate birthdate) {
 		this.birthdate = birthdate;
 	}
-
+	*/
 	public String getAddressLine1() {
 		return addressLine1;
 	}
@@ -158,14 +182,14 @@ public class User {
 	public void setManagerID(int managerID) {
 		this.managerID = managerID;
 	}
-	
+
 	// Methods
 	
 	@Override
 	public String toString() {
 		return "User [userID=" + userID + ", userType=" + userType + ", firstName=" + firstName + ", lastName="
-				+ lastName + ", username=" + username + ", birthdate=" + birthdate + ", addressLine1=" + addressLine1
-				+ ", addressLine2=" + addressLine2 + ", city=" + city + ", zipCode=" + zipCode + ", emailAddress="
+				+ lastName + ", username=" + username + ", addressLine1=" + addressLine1 + ", addressLine2="
+				+ addressLine2 + ", city=" + city + ", state=" + state + ", zipCode=" + zipCode + ", emailAddress="
 				+ emailAddress + ", phoneNumber=" + phoneNumber + ", managerID=" + managerID + "]";
 	}
 
@@ -175,13 +199,13 @@ public class User {
 		int result = 1;
 		result = prime * result + ((addressLine1 == null) ? 0 : addressLine1.hashCode());
 		result = prime * result + ((addressLine2 == null) ? 0 : addressLine2.hashCode());
-		result = prime * result + ((birthdate == null) ? 0 : birthdate.hashCode());
 		result = prime * result + ((city == null) ? 0 : city.hashCode());
 		result = prime * result + ((emailAddress == null) ? 0 : emailAddress.hashCode());
 		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
 		result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
 		result = prime * result + managerID;
 		result = prime * result + ((phoneNumber == null) ? 0 : phoneNumber.hashCode());
+		result = prime * result + ((state == null) ? 0 : state.hashCode());
 		result = prime * result + userID;
 		result = prime * result + userType;
 		result = prime * result + ((username == null) ? 0 : username.hashCode());
@@ -207,11 +231,6 @@ public class User {
 			if (other.addressLine2 != null)
 				return false;
 		} else if (!addressLine2.equals(other.addressLine2))
-			return false;
-		if (birthdate == null) {
-			if (other.birthdate != null)
-				return false;
-		} else if (!birthdate.equals(other.birthdate))
 			return false;
 		if (city == null) {
 			if (other.city != null)
@@ -240,6 +259,11 @@ public class User {
 				return false;
 		} else if (!phoneNumber.equals(other.phoneNumber))
 			return false;
+		if (state == null) {
+			if (other.state != null)
+				return false;
+		} else if (!state.equals(other.state))
+			return false;
 		if (userID != other.userID)
 			return false;
 		if (userType != other.userType)
@@ -256,7 +280,5 @@ public class User {
 			return false;
 		return true;
 	}
-	
-	
 	
 }
