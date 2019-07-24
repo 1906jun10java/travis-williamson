@@ -21,7 +21,7 @@ public class CredentialsDAOImpl implements CredentialsDAO {
 	
 	public Credentials login(String username, String password) throws SQLException {
 		
-		boolean result = false;
+		//boolean result = false;
 		Connection conn = null;
 		try {
 			conn = cf.getConnection("database.properties");

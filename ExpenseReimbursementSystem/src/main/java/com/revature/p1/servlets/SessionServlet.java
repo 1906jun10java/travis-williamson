@@ -20,6 +20,7 @@ public class SessionServlet extends HttpServlet {
         super();
     }
 
+    @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession session = request.getSession(false);
@@ -54,6 +55,7 @@ public class SessionServlet extends HttpServlet {
 		}
 	}
 
+    @Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		doGet(request, response);

@@ -73,7 +73,6 @@ public class LoginServlet extends HttpServlet {
     		dispatcher.forward(request, response);
     	}
     	else {
-    		//response.getWriter().write("invalid credentials, nerd");
     		session.setAttribute("problem", "invalid credentials");
     		response.sendRedirect("login");
     		//response.sendError(403, "invalid credentials");

@@ -9,7 +9,9 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.revature.p1.beans.*;
 import com.revature.p1.daos.UserDAO;
@@ -72,5 +74,61 @@ public class UserDAOImpl implements UserDAO {
 		}
 		
 		return u;
+	}
+	
+	public List<User> getAllEmployeesAndManagers() throws SQLException {
+		
+		List<User> employeeAndManager = new ArrayList<User>();
+		
+		Connection conn = null;
+		try {
+			conn = cf.getConnection("database.properties");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		Statement stmt = conn.createStatement();
+		ResultSet rs = stmt.executeQuery("SELECT e.USER_ID, e.FIRST_NAME, e.LAST_NAME, m.USER_ID, m.FIRST_NAME, m.LAST_NAME " +
+			"FROM P1_USER e LEFT JOIN P1_USER m ON m.USER_ID = e.MANAGER_ID ORDER BY e.MANAGER_ID");
+		
+		while (rs.next()) {
+			User employee = new User(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5), rs.getString(6));
+			employeeAndManager.add(employee);
+		}
+		
+		return employeeAndManager;
+	}
+	
+	// just use getUser to get and show user information
+	/*
+	public void viewPersonalInformation() throws SQLException {
+		
+	}
+	*/
+	
+	public void updatePersonalInformation(String addressLine1, String addressLine2, String city, String state, String zipCode, 
+			String emailAddress, String phoneNumber, int userID) throws SQLException {
+		
+		Connection conn = null;
+		try {
+			conn = cf.getConnection("database.properties");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		String sql = "UPDATE P1_USER SET ADDRESS_LINE_1 = ?, ADDRESS_LINE_2 = ?, CITY = ?, STATE_ABRV = ?, ZIP_CODE = ?, " 
+		    + "EMAIL = ?, PHONE = ? WHERE USER_ID = "+"'"+userID+"'";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setString(1, addressLine1);
+		ps.setString(2, addressLine2);
+		ps.setString(3, city);
+		ps.setString(4, state);
+		ps.setString(5, zipCode);
+		ps.setString(6, emailAddress);
+		ps.setString(7, phoneNumber);
+		ps.executeUpdate();
 	}
 }

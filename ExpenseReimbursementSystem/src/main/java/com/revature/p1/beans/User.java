@@ -15,6 +15,27 @@ public class User {
 		this.userType = userType;
 	}
 	
+	public User(String firstName, String lastName) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
+	
+	public User(int userID, String firstName, String lastName) {
+		this.userID = userID;
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
+	
+
+	public User(int userID, String firstName, String lastName, int managerID, String managerFirstName, String managerLastName) {
+		this.userID = userID;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.managerID = managerID;
+		this.managerFirstName = managerFirstName;
+		this.managerLastName = managerLastName;
+	}
+	
 	public User(int userType, String firstName, String lastName, String username,
 			String addressLine1, String addressLine2, String city, String state, String zipCode, String emailAddress,
 			String phoneNumber, int managerID) {
@@ -68,6 +89,8 @@ public class User {
 	private String emailAddress;
 	private String phoneNumber; // need to change data type in database
 	private int managerID;
+	private String managerFirstName;
+	private String managerLastName;
 	
 	// Getters & Setters
 	
@@ -182,9 +205,25 @@ public class User {
 	public void setManagerID(int managerID) {
 		this.managerID = managerID;
 	}
+	
+	public String getManagerFirstName() {
+		return managerFirstName;
+	}
+
+	public void setManagerFirstName(String managerFirstName) {
+		this.managerFirstName = managerFirstName;
+	}
+
+	public String getManagerLastName() {
+		return managerLastName;
+	}
+
+	public void setManagerLastName(String managerLastName) {
+		this.managerLastName = managerLastName;
+	}
 
 	// Methods
-	
+
 	@Override
 	public String toString() {
 		return "User [userID=" + userID + ", userType=" + userType + ", firstName=" + firstName + ", lastName="

@@ -37,24 +37,31 @@
     <servlet-name>Session</servlet-name>
     <url-pattern>/session</url-pattern>
   </servlet-mapping>
+  
   <servlet>
-    <description></description>
-    <display-name>ManagerHomeServlet</display-name>
-    <servlet-name>ManagerHomeServlet</servlet-name>
+    <servlet-name>ManagerHome</servlet-name>
     <servlet-class>com.revature.p1.servlets.ManagerHomeServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>ManagerHomeServlet</servlet-name>
-    <url-pattern>/ManagerHomeServlet</url-pattern>
+    <servlet-name>ManagerHome</servlet-name>
+    <url-pattern>/managerhome</url-pattern>
   </servlet-mapping>
+  
   <servlet>
-    <description></description>
-    <display-name>EmployeeHomeServlet</display-name>
-    <servlet-name>EmployeeHomeServlet</servlet-name>
+    <servlet-name>EmployeeHome</servlet-name>
     <servlet-class>com.revature.p1.servlets.EmployeeHomeServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>EmployeeHomeServlet</servlet-name>
-    <url-pattern>/EmployeeHomeServlet</url-pattern>
+    <servlet-name>EmployeeHome</servlet-name>
+    <url-pattern>/employeehome</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ViewAllEmployees</servlet-name>
+    <servlet-class>com.revature.p1.servlets.ViewAllEmployeesServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewAllEmployees</servlet-name>
+    <url-pattern>/viewallemployeesandmanagers</url-pattern>
   </servlet-mapping>
 </web-app>
