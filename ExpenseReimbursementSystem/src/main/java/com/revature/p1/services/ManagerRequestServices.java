@@ -72,5 +72,36 @@ public class ManagerRequestServices {
 		}
 	}
 	
+	public static void submitRequest() {
+		//
+	}
+	
+	public List<Request> viewPendingRequests(int userID) {
+		
+		List<Request> personalPendingRequests = null;
+		
+		try {
+			personalPendingRequests = requestDAOImpl.viewPendingRequestsForEmployee(userID);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return personalPendingRequests;
+	}
+	
+	public List<Request> viewResolvedRequests(int userID) {
+		
+		List<Request> personalResolvedRequests = null;
+		
+		try {
+			personalResolvedRequests = requestDAOImpl.viewResolvedRequestsForEmployee(userID);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return personalResolvedRequests;
+	}
+	
 	
 }

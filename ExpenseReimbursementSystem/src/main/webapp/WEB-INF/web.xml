@@ -130,4 +130,14 @@
     <servlet-name>ManagerViewResolvedRequestsForEmployees</servlet-name>
     <url-pattern>/managerviewresolvedrequestsforemployees</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ManagerPersonalPendingRequests</display-name>
+    <servlet-name>ManagerPersonalPendingRequests</servlet-name>
+    <servlet-class>com.revature.p1.servlets.ManagerPersonalPendingRequestsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ManagerPersonalPendingRequests</servlet-name>
+    <url-pattern>/managerpersonalpendingrequests</url-pattern>
+  </servlet-mapping>
 </web-app>
