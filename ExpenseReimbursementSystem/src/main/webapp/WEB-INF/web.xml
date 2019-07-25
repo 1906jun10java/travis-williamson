@@ -121,4 +121,13 @@
     <servlet-name>ViewManagedEmployeeRequests</servlet-name>
     <url-pattern>/viewmanagedemployeerequests</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <servlet-name>ManagerViewResolvedRequestsForEmployees</servlet-name>
+    <servlet-class>com.revature.p1.servlets.ManagerViewResolvedRequestsForEmployeesServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ManagerViewResolvedRequestsForEmployees</servlet-name>
+    <url-pattern>/managerviewresolvedrequestsforemployees</url-pattern>
+  </servlet-mapping>
 </web-app>

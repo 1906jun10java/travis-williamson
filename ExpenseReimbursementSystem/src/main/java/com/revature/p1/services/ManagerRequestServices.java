@@ -28,8 +28,17 @@ public class ManagerRequestServices {
 		return allPendingRequestsForManagedEmployee;
 	}
 	
-	public static void viewAllResolvedRequests() {
-		//
+	public List<Request> viewAllResolvedRequests() {
+		
+		List<Request> allResolvedRequestsForAllEmployees = null;
+		
+		try {
+			allResolvedRequestsForAllEmployees = requestDAOImpl.viewAllResolvedRequestsForAllEmployees();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return allResolvedRequestsForAllEmployees;
 	}
 	
 	public List<Request> viewAllRequestsFromEmployee(int userID) {

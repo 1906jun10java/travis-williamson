@@ -36,6 +36,20 @@ public class Request {
 		this.amount = amount;
 	}
 	
+	public Request(String requestStatusType, int requestID, String requesterFirstName, String requesterLastName,
+			int userID, double amount, int managerID, String managerFirstName, String managerLastName ) {
+		
+		this.requestStatusType = requestStatusType;
+		this.requestID = requestID;
+		this.requesterFirstName = requesterFirstName;
+		this.requesterLastName = requesterLastName;
+		this.userID = userID;
+		this.amount = amount;
+		this.managerID =  managerID;
+		this.managerFirstName =  managerFirstName;
+		this.managerLastName =  managerLastName;
+	}
+	
 	public Request(int requestID, int userID, double amount, int statusID, String requestNote,
 			String requesterFirstName, String requesterLastName) {
 		super();
@@ -58,6 +72,9 @@ public class Request {
 	private String requesterFirstName;
 	private String requesterLastName;
 	private String requestStatusType;
+	private int managerID;
+	private String managerFirstName;
+	private String managerLastName;
 	
 	// Getters & Setters
 	
@@ -125,13 +142,39 @@ public class Request {
 		this.requestStatusType = requestStatusType;
 	}
 
-	// Methods
+	public int getManagerID() {
+		return managerID;
+	}
+
+	public void setManagerID(int managerID) {
+		this.managerID = managerID;
+	}
+
+	public String getManagerFirstName() {
+		return managerFirstName;
+	}
+
+	public void setManagerFirstName(String managerFirstName) {
+		this.managerFirstName = managerFirstName;
+	}
+
+	public String getManagerLastName() {
+		return managerLastName;
+	}
+
+	public void setManagerLastName(String managerLastName) {
+		this.managerLastName = managerLastName;
+	}
 	
+	// Methods
+
 	@Override
 	public String toString() {
 		return "Request [requestID=" + requestID + ", userID=" + userID + ", amount=" + amount + ", statusID="
 				+ statusID + ", requestNote=" + requestNote + ", requesterFirstName=" + requesterFirstName
-				+ ", requesterLastName=" + requesterLastName + ", requestStatusType=" + requestStatusType + "]";
+				+ ", requesterLastName=" + requesterLastName + ", requestStatusType=" + requestStatusType
+				+ ", managerID=" + managerID + ", managerFirstName=" + managerFirstName + ", managerLastName="
+				+ managerLastName + "]";
 	}
 
 	@Override
@@ -141,6 +184,9 @@ public class Request {
 		long temp;
 		temp = Double.doubleToLongBits(amount);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + ((managerFirstName == null) ? 0 : managerFirstName.hashCode());
+		result = prime * result + managerID;
+		result = prime * result + ((managerLastName == null) ? 0 : managerLastName.hashCode());
 		result = prime * result + requestID;
 		result = prime * result + ((requestNote == null) ? 0 : requestNote.hashCode());
 		result = prime * result + ((requestStatusType == null) ? 0 : requestStatusType.hashCode());
@@ -161,6 +207,18 @@ public class Request {
 			return false;
 		Request other = (Request) obj;
 		if (Double.doubleToLongBits(amount) != Double.doubleToLongBits(other.amount))
+			return false;
+		if (managerFirstName == null) {
+			if (other.managerFirstName != null)
+				return false;
+		} else if (!managerFirstName.equals(other.managerFirstName))
+			return false;
+		if (managerID != other.managerID)
+			return false;
+		if (managerLastName == null) {
+			if (other.managerLastName != null)
+				return false;
+		} else if (!managerLastName.equals(other.managerLastName))
 			return false;
 		if (requestID != other.requestID)
 			return false;
@@ -191,6 +249,9 @@ public class Request {
 		return true;
 	}
 
+	
+	
+	
 	
 	
 	

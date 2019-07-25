@@ -238,7 +238,7 @@ public class Driver {
 		
 		// Attempt to view all requests from a single managed employee
 		
-		
+		/*
 		try {
 			List<Request> pendingRequests = requestDAOImpl.viewAllRequestsForEmployee(1009);
 			
@@ -248,6 +248,20 @@ public class Driver {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		*/
 		
+		// Attempt to view all resolved requests from all employees
+		
+		/*
+		try {
+			List<Request> allResolvedRequests = requestDAOImpl.viewAllResolvedRequestsForAllEmployees();
+			
+			for(Request request : allResolvedRequests) {
+				System.out.println(request);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		*/
 	}
 }

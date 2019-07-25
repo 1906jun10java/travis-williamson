@@ -1,10 +1,10 @@
 let requestArray = {};
 
 window.onload = function() {
-	listEmployeesAndManagers();
+	viewPendingRequests();
 }
 
-function listEmployeesAndManagers() {
+function viewPendingRequests() {
 	
 	fetch("http://localhost:8082/ExpenseReimbursementSystem/managerviewpendingrequests").then(function(response) {
 		return response.json(); 
