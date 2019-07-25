@@ -6,7 +6,7 @@ window.onload = function() {
 
 function listPersonalPendingRequests() {
 	
-	fetch("http://localhost:8082/ExpenseReimbursementSystem//managerpersonalpendingrequests").then(function(response) {
+	fetch("http://localhost:8082/ExpenseReimbursementSystem//managerresolvedpendingrequests").then(function(response) {
 		return response.json(); 
 	}).then(function(data) {
 		console.log(data);
@@ -23,11 +23,11 @@ function listPersonalPendingRequests() {
 				let amount = requestArray[i].amount;
 				let requestID = requestArray[i].requestID;
 				let requestStatusType = requestArray[i].requestStatusType;
-				let personalPendingRequests = document.createTextNode(`RequestID: ${requestID} for ${employee} (EmployeeID: ${employeeID}) - $${amount} - Status: ${requestStatusType}`);
-				//let personalPendingRequests = document.createTextNode(`RequestID: ${requestID})`);
+				let personalResolvedRequests = document.createTextNode(`RequestID: ${requestID} for ${employee} (EmployeeID: ${employeeID}) - $${amount} - Status: ${requestStatusType}`);
 				
-				li.appendChild(personalPendingRequests);
-				document.getElementById("managerpersonalpendingrequests").appendChild(li);
+				
+				li.appendChild(personalResolvedRequests);
+				document.getElementById("managerpersonalresolvedrequests").appendChild(li);
 			}
 			
 		}

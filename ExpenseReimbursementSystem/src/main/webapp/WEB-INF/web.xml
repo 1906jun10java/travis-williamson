@@ -140,4 +140,24 @@
     <servlet-name>ManagerPersonalPendingRequests</servlet-name>
     <url-pattern>/managerpersonalpendingrequests</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ManagerPersonalResolvedRequests</display-name>
+    <servlet-name>ManagerPersonalResolvedRequests</servlet-name>
+    <servlet-class>com.revature.p1.servlets.ManagerPersonalResolvedRequestsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ManagerPersonalResolvedRequests</servlet-name>
+    <url-pattern>/managerresolvedpendingrequests</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ManagerSubmitRequest</display-name>
+    <servlet-name>ManagerSubmitRequest</servlet-name>
+    <servlet-class>com.revature.p1.servlets.ManagerSubmitRequestServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ManagerSubmitRequest</servlet-name>
+    <url-pattern>/managersubmitrequest</url-pattern>
+  </servlet-mapping>
 </web-app>

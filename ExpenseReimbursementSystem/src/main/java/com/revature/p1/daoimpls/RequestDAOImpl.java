@@ -54,11 +54,16 @@ public class RequestDAOImpl implements RequestDAO {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
 		Statement stmt = conn.createStatement();
-		ResultSet rs = stmt.executeQuery("SELECT * FROM P1_REQUEST WHERE USER_ID = "+"'"+userID+"' AND STATUS_TYPE_ID = 0" );
+		ResultSet rs = stmt.executeQuery("SELECT RS.STATUS_TYPE_NAME, R.REQUEST_ID, U.FIRST_NAME, U.LAST_NAME, U.USER_ID, R.AMOUNT " +  
+				"FROM P1_REQUEST_STATUS_TYPE RS, P1_REQUEST R, P1_USER U " + 
+				"WHERE RS.STATUS_TYPE_ID = R.STATUS_TYPE_ID AND R.USER_ID = U.USER_ID " + 
+				"AND R.STATUS_TYPE_ID = 0 AND U.USER_ID = "+"'"+userID+"'");
 		
 		while (rs.next()) {
-			Request request = new Request(rs.getInt(1), rs.getInt(2), rs.getDouble(3), rs.getInt(4), rs.getString(5));
+			Request request = new Request(rs.getString(1), rs.getInt(2), rs.getString(3), rs.getString(4), rs.getInt(5),
+					rs.getDouble(6));
 			pendingRequestsForEmployee.add(request);
 		}				
 		
@@ -79,12 +84,16 @@ public class RequestDAOImpl implements RequestDAO {
 			e.printStackTrace();
 		}
 		Statement stmt = conn.createStatement();
-		ResultSet rs = stmt.executeQuery("SELECT * FROM P1_REQUEST WHERE USER_ID = "+"'"+userID+"' AND (STATUS_TYPE_ID = 1 OR STATUS_TYPE_ID = 2)" );
+		ResultSet rs = stmt.executeQuery("SELECT RS.STATUS_TYPE_NAME, R.REQUEST_ID, U.FIRST_NAME, U.LAST_NAME, U.USER_ID, R.AMOUNT " +  
+				"FROM P1_REQUEST_STATUS_TYPE RS, P1_REQUEST R, P1_USER U " + 
+				"WHERE RS.STATUS_TYPE_ID = R.STATUS_TYPE_ID AND R.USER_ID = U.USER_ID " + 
+				"AND (R.STATUS_TYPE_ID = 1 OR R.STATUS_TYPE_ID = 2) AND U.USER_ID = "+"'"+userID+"'");
 		
 		while (rs.next()) {
-			Request request = new Request(rs.getInt(1), rs.getInt(2), rs.getDouble(3), rs.getInt(4), rs.getString(5));
+			Request request = new Request(rs.getString(1), rs.getInt(2), rs.getString(3), rs.getString(4), rs.getInt(5),
+					rs.getDouble(6));
 			resolvedRequestsForEmployee.add(request);
-		}						
+		}								
 		
 		return resolvedRequestsForEmployee;
 		

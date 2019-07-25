@@ -72,8 +72,14 @@ public class ManagerRequestServices {
 		}
 	}
 	
-	public static void submitRequest() {
-		//
+	public void submitRequest(int userID, double amount, int statusID, String requestNote) {
+		
+		try {
+			requestDAOImpl.submitRequest(userID, amount, statusID, requestNote);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
 	}
 	
 	public List<Request> viewPendingRequests(int userID) {
@@ -83,7 +89,6 @@ public class ManagerRequestServices {
 		try {
 			personalPendingRequests = requestDAOImpl.viewPendingRequestsForEmployee(userID);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
