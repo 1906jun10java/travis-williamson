@@ -71,4 +71,14 @@
     <servlet-name>ManagerUpdateInfo</servlet-name>
     <url-pattern>/managerupdateinfo</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ManagerViewPendingRequests</display-name>
+    <servlet-name>ManagerViewPendingRequests</servlet-name>
+    <servlet-class>com.revature.p1.servlets.ManagerViewPendingRequestsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ManagerViewPendingRequests</servlet-name>
+    <url-pattern>/managerviewpendingrequests</url-pattern>
+  </servlet-mapping>
 </web-app>

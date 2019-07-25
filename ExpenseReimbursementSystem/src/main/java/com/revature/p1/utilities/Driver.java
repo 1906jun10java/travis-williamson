@@ -207,5 +207,19 @@ public class Driver {
 		}
 		*/
 		
+		// Attempt to view all pending requests from managed employees
+		
+		
+		try {
+			List<Request> pendingRequests = requestDAOImpl.viewAllPendingRequestsForManagedEmployees(1007);
+			
+			for(Request request : pendingRequests) {
+				System.out.println(request);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		
 	}
 }

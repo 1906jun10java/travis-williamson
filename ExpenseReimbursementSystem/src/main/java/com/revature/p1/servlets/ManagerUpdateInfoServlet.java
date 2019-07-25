@@ -58,7 +58,7 @@ public class ManagerUpdateInfoServlet extends HttpServlet {
 		session.setAttribute("state", typedState);
 		session.setAttribute("zipcode", typedZipCode);
 		session.setAttribute("email", typedEmail);
-		session.setAttribute("phone", typedEmail);
+		session.setAttribute("phone", typedPhone);
 		
 		String nextPage = "/managerviewpersonalinfo.html";
 		

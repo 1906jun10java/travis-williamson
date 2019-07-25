@@ -134,10 +134,13 @@ public class RequestDAOImpl implements RequestDAO {
 			e.printStackTrace();
 		}
 		Statement stmt = conn.createStatement();
-		ResultSet rs = stmt.executeQuery("SELECT * FROM P1_REQUEST WHERE STATUS_TYPE_ID = 0 AND ");
+		ResultSet rs = stmt.executeQuery("SELECT REQUEST_ID, P1_REQUEST.USER_ID, AMOUNT, STATUS_TYPE_ID, NOTE, FIRST_NAME, LAST_NAME " + 
+				"FROM P1_REQUEST INNER JOIN P1_USER ON P1_USER.USER_ID = P1_REQUEST.USER_ID " + 
+				"WHERE STATUS_TYPE_ID = 0 AND MANAGER_ID = "+"'"+managerID+"'");
 		
 		while (rs.next()) {
-			Request request = new Request(rs.getInt(1), rs.getInt(2), rs.getDouble(3), rs.getInt(4), rs.getString(5));
+			Request request = new Request(rs.getInt(1), rs.getInt(2), rs.getDouble(3), rs.getInt(4), rs.getString(5),
+					rs.getString(6), rs.getString(7));
 			allPendingRequests.add(request);
 		}
 		

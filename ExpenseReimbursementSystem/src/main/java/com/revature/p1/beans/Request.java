@@ -16,6 +16,26 @@ public class Request {
 		this.statusID = statusID;
 		this.requestNote = requestNote;
 	}
+	
+	public Request(int requestID, int userID, double amount, int statusID) {
+		super();
+		this.requestID = requestID;
+		this.userID = userID;
+		this.amount = amount;
+		this.statusID = statusID;
+	}
+	
+	public Request(int requestID, int userID, double amount, int statusID, String requestNote,
+			String requesterFirstName, String requesterLastName) {
+		super();
+		this.requestID = requestID;
+		this.userID = userID;
+		this.amount = amount;
+		this.statusID = statusID;
+		this.requestNote = requestNote;
+		this.requesterFirstName = requesterFirstName;
+		this.requesterLastName = requesterLastName;
+	}
 
 	// Instance Variables
 	
@@ -24,6 +44,8 @@ public class Request {
 	private double amount;
 	private int statusID;
 	private String requestNote;
+	private String requesterFirstName;
+	private String requesterLastName;
 	
 	// Getters & Setters
 	
@@ -66,13 +88,30 @@ public class Request {
 	public void setRequestNote(String requestNote) {
 		this.requestNote = requestNote;
 	}
-		
+
+	public String getRequesterFirstName() {
+		return requesterFirstName;
+	}
+
+	public void setRequesterFirstName(String requesterFirstName) {
+		this.requesterFirstName = requesterFirstName;
+	}
+
+	public String getRequesterLastName() {
+		return requesterLastName;
+	}
+
+	public void setRequesterLastName(String requesterLastName) {
+		this.requesterLastName = requesterLastName;
+	}
+
 	// Methods
 	
 	@Override
 	public String toString() {
 		return "Request [requestID=" + requestID + ", userID=" + userID + ", amount=" + amount + ", statusID="
-				+ statusID + ", requestNote=" + requestNote + "]";
+				+ statusID + ", requestNote=" + requestNote + ", requesterFirstName=" + requesterFirstName
+				+ ", requesterLastName=" + requesterLastName + "]";
 	}
 
 	@Override
@@ -84,6 +123,8 @@ public class Request {
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		result = prime * result + requestID;
 		result = prime * result + ((requestNote == null) ? 0 : requestNote.hashCode());
+		result = prime * result + ((requesterFirstName == null) ? 0 : requesterFirstName.hashCode());
+		result = prime * result + ((requesterLastName == null) ? 0 : requesterLastName.hashCode());
 		result = prime * result + statusID;
 		result = prime * result + userID;
 		return result;
@@ -107,11 +148,25 @@ public class Request {
 				return false;
 		} else if (!requestNote.equals(other.requestNote))
 			return false;
+		if (requesterFirstName == null) {
+			if (other.requesterFirstName != null)
+				return false;
+		} else if (!requesterFirstName.equals(other.requesterFirstName))
+			return false;
+		if (requesterLastName == null) {
+			if (other.requesterLastName != null)
+				return false;
+		} else if (!requesterLastName.equals(other.requesterLastName))
+			return false;
 		if (statusID != other.statusID)
 			return false;
 		if (userID != other.userID)
 			return false;
 		return true;
 	}
+		
+	
+	
+	
 	
 }
