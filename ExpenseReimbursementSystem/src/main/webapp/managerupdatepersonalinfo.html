@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Manager Home Portal</title>
+<link rel="stylesheet" href="myCoolStyles.css">
+</head>
+<body>
+	<div class="display">
+		<h1>MANAGER HOME PORTAL</h1>
+		<h2>Update Your Contact Information</h2>
+	</div>
+	
+	<div class="display">
+    	<form action="managerupdateinfo" method="POST" name="contactinfo">
+            <fieldset>
+                <legend>Address Line 1:</legend>
+                <input required autocomplete="off" name="addressline1"/>
+            </fieldset>
+            <fieldset>
+                <legend>Address Line 2:</legend>
+                <input required autocomplete="off" name="addressline2"/>
+            </fieldset>
+            <fieldset>
+                <legend>City:</legend>
+                <input required autocomplete="off" name="city"/>
+            </fieldset>
+            <fieldset>
+                <legend>State:</legend>
+                <input required autocomplete="off" name="state"/>
+            </fieldset>
+            <fieldset>
+                <legend>Zip Code:</legend>
+                <input required autocomplete="off" name="zipcode"/>
+            </fieldset>
+            <fieldset>
+                <legend>Email:</legend>
+                <input required autocomplete="off" name="email"/>
+            </fieldset>
+            <fieldset>
+                <legend>Phone Number:</legend>
+                <input required autocomplete="off" name="phone"/>
+            </fieldset>
+            <br>
+            <input type="submit" value="managerupdateinfo"/>
+        </form>
+    </div>
+	
+	<div class="display">
+		<h2>Links:</h2>
+		<br>
+		<a href = "managerhome.html">Manager Home Page</a>
+	</div>
+	
+	<form action="logout" method="get">
+		<input type="submit" value="logout"/>
+	</form>
+</body>
+<script src="scripts/updatepersonalinfo.js"></script>
+</html>

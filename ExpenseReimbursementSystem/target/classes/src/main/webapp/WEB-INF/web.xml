@@ -37,7 +37,6 @@
     <servlet-name>Session</servlet-name>
     <url-pattern>/session</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>ManagerHome</servlet-name>
     <servlet-class>com.revature.p1.servlets.ManagerHomeServlet</servlet-class>
@@ -46,7 +45,6 @@
     <servlet-name>ManagerHome</servlet-name>
     <url-pattern>/managerhome</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>EmployeeHome</servlet-name>
     <servlet-class>com.revature.p1.servlets.EmployeeHomeServlet</servlet-class>
@@ -55,7 +53,6 @@
     <servlet-name>EmployeeHome</servlet-name>
     <url-pattern>/employeehome</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>ViewAllEmployees</servlet-name>
     <servlet-class>com.revature.p1.servlets.ViewAllEmployeesServlet</servlet-class>
@@ -63,5 +60,15 @@
   <servlet-mapping>
     <servlet-name>ViewAllEmployees</servlet-name>
     <url-pattern>/viewallemployeesandmanagers</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ManagerUpdateInfo</display-name>
+    <servlet-name>ManagerUpdateInfo</servlet-name>
+    <servlet-class>com.revature.p1.servlets.ManagerUpdateInfoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ManagerUpdateInfo</servlet-name>
+    <url-pattern>/managerupdateinfo</url-pattern>
   </servlet-mapping>
 </web-app>

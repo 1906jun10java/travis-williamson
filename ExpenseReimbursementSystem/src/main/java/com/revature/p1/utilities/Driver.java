@@ -109,10 +109,103 @@ public class Driver {
 		
 		// Attempt to submit a request
 		
+		/*
 		try {
 			requestDAOImpl.submitRequest(1015, 300.00, 2, "business expense");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		*/
+		
+		// Attempt to view all pending requests from all employees
+		
+		/*
+		try {
+			List<Request> allPendingRequests = requestDAOImpl.viewAllPendingRequestsForAllEmployees();
+			
+			for(Request request : allPendingRequests) {
+				System.out.println(request);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		*/
+		
+		// Attempt to view all resolved requests from all employees
+		
+		/*
+		try {
+			List<Request> allResolvedRequests = requestDAOImpl.viewAllResolvedRequestsForAllEmployees();
+			
+			for(Request request : allResolvedRequests) {
+				System.out.println(request);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		*/
+		
+		// Attempt to view all requests from a single employee
+		
+		/*
+		try {
+			List<Request> allRequestsForEmployee = requestDAOImpl.viewAllRequestsForEmployee(1013);
+			
+			for(Request request : allRequestsForEmployee) {
+				System.out.println(request);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		*/
+		
+		// Attempt to view all pending requests for a single employee
+		
+		/*
+		try {
+			List<Request> allPendingRequestsForEmployee = requestDAOImpl.viewPendingRequestsForEmployee(1013);
+			
+			for(Request request : allPendingRequestsForEmployee) {
+				System.out.println(request);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		*/
+		
+		// Attempt to view all resolved requests for a single employee
+		
+		/*
+		try {
+			List<Request> allResolvedRequestsForEmployee = requestDAOImpl.viewResolvedRequestsForEmployee(1013);
+			
+			for(Request request : allResolvedRequestsForEmployee) {
+				System.out.println(request);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		*/
+		
+		// Attempt to accept a request
+		
+		/*
+		try {
+			requestDAOImpl.denyRequest(1010);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		*/
+		
+		// Attempt to deny a request
+		
+		/*
+		try {
+			requestDAOImpl.denyRequest(1013);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		*/
+		
 	}
 }
