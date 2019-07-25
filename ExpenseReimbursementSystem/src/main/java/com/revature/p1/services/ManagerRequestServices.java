@@ -32,8 +32,17 @@ public class ManagerRequestServices {
 		//
 	}
 	
-	public static void viewAllRequestsFromEmployee() {
+	public List<Request> viewAllRequestsFromEmployee(int userID) {
 		//
+		List<Request> allRequestsForManagedEmployee = null;
+		
+		try {
+			allRequestsForManagedEmployee = requestDAOImpl.viewAllRequestsForEmployee(userID);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return allRequestsForManagedEmployee;
 	}
 	
 	public void approveRequest(int requestID) {

@@ -101,4 +101,24 @@
     <servlet-name>DenyRequest</servlet-name>
     <url-pattern>/denyrequest</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ViewManagedEmployees</display-name>
+    <servlet-name>ViewManagedEmployees</servlet-name>
+    <servlet-class>com.revature.p1.servlets.ViewManagedEmployeesServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewManagedEmployees</servlet-name>
+    <url-pattern>/viewmanagedemployees</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ViewManagedEmployeeRequests</display-name>
+    <servlet-name>ViewManagedEmployeeRequests</servlet-name>
+    <servlet-class>com.revature.p1.servlets.ViewManagedEmployeeRequestsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewManagedEmployeeRequests</servlet-name>
+    <url-pattern>/viewmanagedemployeerequests</url-pattern>
+  </servlet-mapping>
 </web-app>

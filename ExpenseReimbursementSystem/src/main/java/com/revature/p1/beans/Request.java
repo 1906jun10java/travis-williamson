@@ -25,6 +25,17 @@ public class Request {
 		this.statusID = statusID;
 	}
 	
+	public Request(String requestStatusType, int requestID, String requesterFirstName, String requesterLastName,
+			int userID, double amount) {
+		
+		this.requestStatusType = requestStatusType;
+		this.requestID = requestID;
+		this.requesterFirstName = requesterFirstName;
+		this.requesterLastName = requesterLastName;
+		this.userID = userID;
+		this.amount = amount;
+	}
+	
 	public Request(int requestID, int userID, double amount, int statusID, String requestNote,
 			String requesterFirstName, String requesterLastName) {
 		super();
@@ -46,6 +57,7 @@ public class Request {
 	private String requestNote;
 	private String requesterFirstName;
 	private String requesterLastName;
+	private String requestStatusType;
 	
 	// Getters & Setters
 	
@@ -105,13 +117,21 @@ public class Request {
 		this.requesterLastName = requesterLastName;
 	}
 
+	public String getRequestStatusType() {
+		return requestStatusType;
+	}
+
+	public void setRequestStatusType(String requestStatusType) {
+		this.requestStatusType = requestStatusType;
+	}
+
 	// Methods
 	
 	@Override
 	public String toString() {
 		return "Request [requestID=" + requestID + ", userID=" + userID + ", amount=" + amount + ", statusID="
 				+ statusID + ", requestNote=" + requestNote + ", requesterFirstName=" + requesterFirstName
-				+ ", requesterLastName=" + requesterLastName + "]";
+				+ ", requesterLastName=" + requesterLastName + ", requestStatusType=" + requestStatusType + "]";
 	}
 
 	@Override
@@ -123,6 +143,7 @@ public class Request {
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		result = prime * result + requestID;
 		result = prime * result + ((requestNote == null) ? 0 : requestNote.hashCode());
+		result = prime * result + ((requestStatusType == null) ? 0 : requestStatusType.hashCode());
 		result = prime * result + ((requesterFirstName == null) ? 0 : requesterFirstName.hashCode());
 		result = prime * result + ((requesterLastName == null) ? 0 : requesterLastName.hashCode());
 		result = prime * result + statusID;
@@ -148,6 +169,11 @@ public class Request {
 				return false;
 		} else if (!requestNote.equals(other.requestNote))
 			return false;
+		if (requestStatusType == null) {
+			if (other.requestStatusType != null)
+				return false;
+		} else if (!requestStatusType.equals(other.requestStatusType))
+			return false;
 		if (requesterFirstName == null) {
 			if (other.requesterFirstName != null)
 				return false;
@@ -164,6 +190,10 @@ public class Request {
 			return false;
 		return true;
 	}
+
+	
+	
+	
 		
 	
 	

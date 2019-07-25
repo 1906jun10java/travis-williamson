@@ -209,7 +209,7 @@ public class Driver {
 		
 		// Attempt to view all pending requests from managed employees
 		
-		
+		/*
 		try {
 			List<Request> pendingRequests = requestDAOImpl.viewAllPendingRequestsForManagedEmployees(1007);
 			
@@ -219,7 +219,35 @@ public class Driver {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		*/
 		
+		// Attempt to view all employees of a particular manager
+		
+		/*
+		try {
+			List<User> allManagedEmployees = userDaoImpl.getAllManagedEmployees(1007);
+			
+			for(User employee : allManagedEmployees) {
+				System.out.println(employee);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		*/
+		
+		// Attempt to view all requests from a single managed employee
+		
+		
+		try {
+			List<Request> pendingRequests = requestDAOImpl.viewAllRequestsForEmployee(1009);
+			
+			for(Request request : pendingRequests) {
+				System.out.println(request);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		
 	}
 }

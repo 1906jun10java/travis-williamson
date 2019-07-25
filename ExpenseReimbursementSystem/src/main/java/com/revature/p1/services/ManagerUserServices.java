@@ -16,6 +16,19 @@ public class ManagerUserServices {
 	
 	// Methods
 	
+	public List<User> viewAllManagedEmployees(int managerID) {
+		
+		List<User> allManagedEmployees = null;
+		
+		try {
+			allManagedEmployees = userDAOImpl.getAllManagedEmployees(managerID);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return allManagedEmployees;
+	}
+	
 	public List<User> viewAllEmployeesAndManagers() {
 		
 		List<User> employeesAndManagers = null;

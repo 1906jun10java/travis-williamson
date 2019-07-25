@@ -76,6 +76,29 @@ public class UserDAOImpl implements UserDAO {
 		return u;
 	}
 	
+	public List<User> getAllManagedEmployees(int managerID) throws SQLException {
+		
+		List<User> allManagedEmployees = new ArrayList<User>();
+		
+		Connection conn = null;
+		try {
+			conn = cf.getConnection("database.properties");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		Statement stmt = conn.createStatement();
+		ResultSet rs = stmt.executeQuery("SELECT USER_ID, FIRST_NAME, LAST_NAME FROM P1_USER WHERE MANAGER_ID = "+"'"+managerID+"'");
+		
+		while (rs.next()) {
+			User employee = new User(rs.getInt(1), rs.getString(2), rs.getString(3));
+			allManagedEmployees.add(employee);
+		}
+		
+		return allManagedEmployees;
+	}
+	
 	public List<User> getAllEmployeesAndManagers() throws SQLException {
 		
 		List<User> employeeAndManager = new ArrayList<User>();

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Manager Home Portal</title>
+<link rel="stylesheet" href="myCoolStyles.css">
+</head>
+<body>
+	<div class="display">
+		<h1>MANAGER HOME PORTAL</h1>
+	</div>
+	
+	<div class="display2">
+	
+	<h2 align = "center">Viewing All Employees That You Manage</h2>
+	 
+		<ul id = "allmanagedemployees">
+		</ul>
+		
+		<h3 align = "center">Enter the UserID of an Employee to See All Their Requests:</h3>
+		
+		<div style="text-align: center">
+			<form action="viewmanagedemployeerequests" method="POST">
+	                <fieldset>
+	                    <legend>Employee UserID:</legend>
+	                    <input required autocomplete="off" name="viewmanagedemployeerequests"/>
+	                </fieldset>
+	                <br>
+	                <input type="submit" value="submit"/>
+	        </form>
+        </div>
+		
+	</div>
+	
+	<div class="display">
+		<h2>Links:</h2>
+		<br>
+		<a href = "managerhome.html">Manager</a>
+	</div>
+	
+	<form action="logout" method="get">
+		<input type="submit" value="logout"/>
+	</form>
+</body>
+<script src="scripts/viewmanagedemployees.js"></script>
+<!--  
+<script src="scripts/checkifmanager.js"></script>
+-->
+</html>

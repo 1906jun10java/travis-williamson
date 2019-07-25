@@ -15,12 +15,9 @@ public interface UserDAO {
 	
 	public abstract User getUser(String username) throws SQLException;
 	
-	public abstract List<User> getAllEmployeesAndManagers() throws SQLException;
+	public abstract List<User> getAllManagedEmployees(int managerID) throws SQLException;
 	
-	// just use getUser to get and show user information
-	/*
-	public abstract void viewPersonalInformation() throws SQLException;
-	*/
+	public abstract List<User> getAllEmployeesAndManagers() throws SQLException;
 	
 	public abstract void updatePersonalInformation(String addressLine1, String addressLine2, String city, 
 			String state, String zipCode, String emailAddress, String phoneNumber, int userID) throws SQLException;
