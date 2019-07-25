@@ -50,7 +50,7 @@ public class ManagerUpdateInfoServlet extends HttpServlet {
 		String typedPhone = request.getParameter("phone");
 		
 		managerUserServices.updatePersonalInformation(typedAddressLine1, typedAddressLine2, typedCity, typedState,
-				typedZipCode, typedEmail, typedEmail, currentUserID);
+				typedZipCode, typedEmail, typedPhone, currentUserID);
 		
 		session.setAttribute("addressline1", typedAddressLine1);
 		session.setAttribute("addressline2", typedAddressLine2);

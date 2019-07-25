@@ -16,6 +16,28 @@
 		<ul id = "pendingrequestsforemployees">
 		</ul>
 		
+		<h3 align = "center">Enter a RequestID to Accept or Deny It:</h3>
+		
+		<div style="text-align: center">
+			<form action="acceptrequest" method="POST">
+	                <fieldset>
+	                    <legend>Accept:</legend>
+	                    <input required autocomplete="off" name="acceptrequest"/>
+	                </fieldset>
+	                <br>
+	                <input type="submit" value="accept"/>
+	        </form>
+	        <br>
+	        <form action="denyrequest" method="POST">
+	                <fieldset>
+	                    <legend>Deny:</legend>
+	                    <input required autocomplete="off" name="denyrequest"/>
+	                </fieldset>
+	                <br>
+	                <input type="submit" value="deny"/>
+	        </form>
+        </div>
+		
 	</div>
 	
 	<div class="display">

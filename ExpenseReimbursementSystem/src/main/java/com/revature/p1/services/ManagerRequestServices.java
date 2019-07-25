@@ -36,12 +36,22 @@ public class ManagerRequestServices {
 		//
 	}
 	
-	public static void approveRequest() {
-		//
+	public void approveRequest(int requestID) {
+		
+		try {
+			requestDAOImpl.approveRequest(requestID);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 	
-	public static void denyRequest() {
-		//
+	public void denyRequest(int requestID) {
+		
+		try {
+			requestDAOImpl.denyRequest(requestID);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	

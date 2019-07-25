@@ -81,4 +81,24 @@
     <servlet-name>ManagerViewPendingRequests</servlet-name>
     <url-pattern>/managerviewpendingrequests</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AcceptRequest</display-name>
+    <servlet-name>AcceptRequest</servlet-name>
+    <servlet-class>com.revature.p1.servlets.AcceptRequestServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AcceptRequest</servlet-name>
+    <url-pattern>/acceptrequest</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DenyRequest</display-name>
+    <servlet-name>DenyRequest</servlet-name>
+    <servlet-class>com.revature.p1.servlets.DenyRequestServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DenyRequest</servlet-name>
+    <url-pattern>/denyrequest</url-pattern>
+  </servlet-mapping>
 </web-app>
