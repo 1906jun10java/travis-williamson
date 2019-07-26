@@ -160,4 +160,44 @@
     <servlet-name>ManagerSubmitRequest</servlet-name>
     <url-pattern>/managersubmitrequest</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EmployeeSubmitRequest</display-name>
+    <servlet-name>EmployeeSubmitRequest</servlet-name>
+    <servlet-class>com.revature.p1.servlets.EmployeeSubmitRequestServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeSubmitRequest</servlet-name>
+    <url-pattern>/employeesubmitrequest</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EmployeePersonalPendingRequests</display-name>
+    <servlet-name>EmployeePersonalPendingRequests</servlet-name>
+    <servlet-class>com.revature.p1.servlets.EmployeePersonalPendingRequestsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeePersonalPendingRequests</servlet-name>
+    <url-pattern>/employeepersonalpendingrequests</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EmployeePersonalResolvedRequests</display-name>
+    <servlet-name>EmployeePersonalResolvedRequests</servlet-name>
+    <servlet-class>com.revature.p1.servlets.EmployeePersonalResolvedRequestsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeePersonalResolvedRequests</servlet-name>
+    <url-pattern>/employeeresolvedpendingrequests</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EmployeeUpdateInfo</display-name>
+    <servlet-name>EmployeeUpdateInfo</servlet-name>
+    <servlet-class>com.revature.p1.servlets.EmployeeUpdateInfoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeUpdateInfo</servlet-name>
+    <url-pattern>/employeeupdateinfo</url-pattern>
+  </servlet-mapping>
 </web-app>

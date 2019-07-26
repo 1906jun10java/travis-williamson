@@ -19,14 +19,14 @@ import com.revature.p1.beans.*;
 import com.revature.p1.daoimpls.*;
 
 
-public class ManagerPersonalResolvedRequestsServlet extends HttpServlet {
+public class EmployeePersonalPendingRequestsServlet extends HttpServlet {
 	
-	private ManagerRequestServices managerRequestServices;
+	private EmployeeRequestServices employeeRequestServices;
 	private ObjectMapper om;
 	
-    public ManagerPersonalResolvedRequestsServlet() {
+    public EmployeePersonalPendingRequestsServlet() {
         super();
-        managerRequestServices = new ManagerRequestServices();
+        employeeRequestServices = new EmployeeRequestServices();
         om = new ObjectMapper();
     }
 
@@ -37,7 +37,7 @@ public class ManagerPersonalResolvedRequestsServlet extends HttpServlet {
 		
 		int userid = Integer.parseInt(session.getAttribute("userid").toString());
 		
-		response.getWriter().write(om.writeValueAsString(managerRequestServices.viewResolvedRequests(userid)));
+		response.getWriter().write(om.writeValueAsString(employeeRequestServices.viewPendingRequests(userid)));
 		
 	}
 
@@ -45,5 +45,7 @@ public class ManagerPersonalResolvedRequestsServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		doGet(request, response);
+		
 	}
+
 }

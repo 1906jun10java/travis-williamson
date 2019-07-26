@@ -33,47 +33,19 @@ public class ManagerPersonalPendingRequestsServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		//response.getWriter().write(om.writeValueAsString(managerRequestServices.viewPendingRequests(1007)));
-		
-		
 		HttpSession session = request.getSession();
 		
 		int userid = Integer.parseInt(session.getAttribute("userid").toString());
 		
 		response.getWriter().write(om.writeValueAsString(managerRequestServices.viewPendingRequests(userid)));
 		
-		
-		/*
-		HttpSession session = request.getSession();
-		
-		if (session != null && session.getAttribute("userid") != null) {
-			try {
-				int userid = Integer.parseInt(session.getAttribute("userid").toString());
-				
-				response.getWriter().write(om.writeValueAsString(managerRequestServices.viewPendingRequests(userid)));
-				
-			} catch (Exception e) {
-				e.printStackTrace();
-				response.getWriter().write("{\"session\":null}");
-			}
-		} else {
-			response.getWriter().write("{\"session\":null}");
-		}
-		*/
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		doGet(request, response);
-		//HttpSession session = request.getSession();
 		
-		/*
-		String nextPage = "/viewmanagedemployeerequests.html";
-		
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
-		dispatcher.forward(request, response);
-		*/
 	}
 
 }

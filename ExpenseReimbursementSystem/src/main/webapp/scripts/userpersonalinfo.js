@@ -18,13 +18,13 @@ function getuserinfo() {
 			//define behavior for when a user is returned
 			user = data;
 			
-			document.getElementById("addressline1").innerText = "addressline1: "+user.addressLine1;
-			document.getElementById("addressline2").innerText = "addressline2: "+user.addressLine2;
-			document.getElementById("city").innerText = "city: "+user.city;
-			document.getElementById("state").innerText = "state: "+user.state;
-			document.getElementById("zipcode").innerText = "zipcode: "+user.zipCode;
-			document.getElementById("email").innerText = "email: "+user.emailAddress;
-			document.getElementById("phone").innerText = "phone: "+user.phoneNumber;
+			document.getElementById("addressline1").innerText = "Address Line 1: "+user.addressLine1;
+			document.getElementById("addressline2").innerText = "Address Line 2: "+user.addressLine2;
+			document.getElementById("city").innerText = "City: "+user.city;
+			document.getElementById("state").innerText = "State: "+user.state;
+			document.getElementById("zipcode").innerText = "Zip Code: "+user.zipCode;
+			document.getElementById("email").innerText = "Email: "+user.emailAddress;
+			document.getElementById("phone").innerText = "Phone: "+user.phoneNumber;
 		}
 	})
 }
