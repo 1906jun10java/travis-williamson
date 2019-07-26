@@ -14,7 +14,6 @@ import com.revature.p1.beans.*;
 
 public class ManagerHomeServlet extends HttpServlet {
    
-	//private static final long serialVersionUID = 1L;
 
 	public ManagerHomeServlet() {
         super();

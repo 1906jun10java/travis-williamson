@@ -23,7 +23,6 @@ function viewPendingRequests() {
 				let amount = requestArray[i].amount;
 				let requestID = requestArray[i].requestID;
 				let reason = requestArray[i].requestNote;
-				//let pendingRequests = document.createTextNode(`Pending request (RequestID: ${requestID}) for ${employee} (EmployeeID: ${employeeID}): ${amount}, Description: ${requestNote}`);
 				let pendingRequests = document.createTextNode(`Pending request (RequestID: ${requestID}) for ${employee} (EmployeeID: ${employeeID}) - $${amount}`);
 				
 				li.appendChild(pendingRequests);

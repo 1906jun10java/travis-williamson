@@ -1,6 +1,6 @@
 package com.revature.p1.beans;
 
-import java.time.LocalDate;
+//import java.time.LocalDate;
 
 public class User {
 
@@ -85,9 +85,9 @@ public class User {
 	private String addressLine2;
 	private String city;
 	private String state;
-	private String zipCode; // need to change data type in database
+	private String zipCode;
 	private String emailAddress;
-	private String phoneNumber; // need to change data type in database
+	private String phoneNumber;
 	private int managerID;
 	private String managerFirstName;
 	private String managerLastName;

@@ -25,7 +25,7 @@ function viewResolvedRequestsForEmployees() {
 				let requestStatusType = requestArray[i].requestStatusType;
 				let manager = `${requestArray[i].managerFirstName} ${requestArray[i].managerLastName}`;
 				let managerID = requestArray[i].managerID;
-				let employeeRequests = document.createTextNode(`RequestID: ${requestID}) for ${employee} (EmployeeID: ${employeeID}) - $${amount} - Status = ${requestStatusType} - Resolved by Manager ${manager} (ManagerID = ${managerID})`);
+				let employeeRequests = document.createTextNode(`RequestID: (${requestID}) for ${employee} (EmployeeID: ${employeeID}) - $${amount} - Status = ${requestStatusType} - Resolved by Manager ${manager} (ManagerID = ${managerID})`);
 				
 				
 				

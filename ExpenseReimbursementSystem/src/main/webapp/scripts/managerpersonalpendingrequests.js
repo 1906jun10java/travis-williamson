@@ -24,7 +24,6 @@ function listPersonalPendingRequests() {
 				let requestID = requestArray[i].requestID;
 				let requestStatusType = requestArray[i].requestStatusType;
 				let personalPendingRequests = document.createTextNode(`RequestID: ${requestID} for ${employee} (EmployeeID: ${employeeID}) - $${amount} - Status: ${requestStatusType}`);
-				//let personalPendingRequests = document.createTextNode(`RequestID: ${requestID})`);
 				
 				li.appendChild(personalPendingRequests);
 				document.getElementById("managerpersonalpendingrequests").appendChild(li);

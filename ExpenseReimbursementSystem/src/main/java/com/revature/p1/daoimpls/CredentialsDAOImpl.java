@@ -21,7 +21,6 @@ public class CredentialsDAOImpl implements CredentialsDAO {
 	
 	public Credentials login(String username, String password) throws SQLException {
 		
-		//boolean result = false;
 		Connection conn = null;
 		try {
 			conn = cf.getConnection("database.properties");
@@ -31,7 +30,6 @@ public class CredentialsDAOImpl implements CredentialsDAO {
 			e.printStackTrace();
 		}
 		Statement stmt = conn.createStatement();
-		//ResultSet rs = stmt.executeQuery("SELECT * FROM P1_CREDENTIALS WHERE USERNAME = "+"'"+username+"' AND USER_PASSWORD = "+"'"+password+"'" );
 		ResultSet rs = stmt.executeQuery("SELECT P1_CREDENTIALS.USERNAME, USER_PASSWORD, USER_TYPE "
 				+ "FROM P1_USER JOIN P1_CREDENTIALS ON P1_USER.USERNAME = P1_CREDENTIALS.USERNAME "
 				+ "WHERE P1_CREDENTIALS.USERNAME = "+"'"+username+"' AND P1_CREDENTIALS.USER_PASSWORD = "+"'"+password+"'" );
@@ -47,7 +45,4 @@ public class CredentialsDAOImpl implements CredentialsDAO {
 
 	}
 	
-	public void logout() throws SQLException {
-		//
-	}
 }

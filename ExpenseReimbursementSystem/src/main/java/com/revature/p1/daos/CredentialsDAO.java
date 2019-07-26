@@ -10,5 +10,4 @@ public interface CredentialsDAO {
 
 	public Credentials login(String username, String password) throws SQLException;
 	
-	public abstract void logout() throws SQLException;
 }

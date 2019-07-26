@@ -123,13 +123,6 @@ public class UserDAOImpl implements UserDAO {
 		return employeeAndManager;
 	}
 	
-	// just use getUser to get and show user information
-	/*
-	public void viewPersonalInformation() throws SQLException {
-		
-	}
-	*/
-	
 	public void updatePersonalInformation(String addressLine1, String addressLine2, String city, String state, String zipCode, 
 			String emailAddress, String phoneNumber, int userID) throws SQLException {
 		

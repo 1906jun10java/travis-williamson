@@ -2,6 +2,8 @@ package com.revature.p1.services;
 
 import java.sql.SQLException;
 
+import org.apache.logging.log4j.*;
+
 import com.revature.p1.beans.*;
 import com.revature.p1.daoimpls.*;
 import com.revature.p1.servlets.*;
@@ -10,7 +12,7 @@ public class CredentialsServices {
 	
 	// Instance Variables
 	
-	
+	static Logger log = LogManager.getLogger(CredentialsServices.class);
 	
 	// Methods
 	
@@ -25,17 +27,13 @@ public class CredentialsServices {
 		
 		CredentialsDAOImpl credDAOImpl = new CredentialsDAOImpl();
 		UserDAOImpl userDAOImpl = new UserDAOImpl();
-		//Credentials databaseCreds = null;
 		User u = null;
 		
 		try {
 			Credentials databaseCreds = credDAOImpl.login(typedUsername, typedPassword);
 			
-			//u = new User(databaseCreds.getUsername(), databaseCreds.getUserType());
-			
-			
 			if(typedUsername.equals(databaseCreds.getUsername()) && typedPassword.equals(databaseCreds.getPassword())) {
-				//u = new User(databaseCreds.getUsername(), databaseCreds.getUserType());
+				
 				u = userDAOImpl.getUser(databaseCreds.getUsername());
 			}
 			
@@ -44,18 +42,12 @@ public class CredentialsServices {
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} catch (NullPointerException e) {
+			log.error("Invalid credentials");
+			e.printStackTrace();
 		}
 		
 		return u;
-	}
-	
-	public static void login() {
-		//
-		
-	}
-	
-	public static void logout() {
-		//
 	}
 
 }

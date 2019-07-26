@@ -44,7 +44,7 @@ public class LoginServlet extends HttpServlet {
     	User u = credServices.authenticateUser(creds);
     	
     	if(u != null) {
-    		//response.getWriter().write(u.toString());
+    		
     		session.setAttribute("userid", u.getUserID());
     		session.setAttribute("usertype", u.getUserType());
     		session.setAttribute("firstname", u.getFirstName());
@@ -75,7 +75,6 @@ public class LoginServlet extends HttpServlet {
     	else {
     		session.setAttribute("problem", "invalid credentials");
     		response.sendRedirect("login");
-    		//response.sendError(403, "invalid credentials");
     	}
     	
 	}
